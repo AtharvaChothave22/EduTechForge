@@ -46,6 +46,9 @@ public class User extends BaseEntity {
 //	private Set<Comment> comments;
 //
 //	
-@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-	private List<UserRole> role;
+@PrimaryKeyJoinColumn
+	
+	@JsonIgnore
+    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
+	private Role role;
 }
